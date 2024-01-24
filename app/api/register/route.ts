@@ -3,7 +3,7 @@ import bcrypt from "bcrypt";
 import prisma from "@/app/libs/prismadb";
 import { NextResponse } from "next/server";
 
-export async function POST(request: Request) {
+export const POST = async (request: Request) => {
   try {
     const body = await request.json();
     const { name, email, password } = body;
@@ -27,4 +27,4 @@ export async function POST(request: Request) {
     console.log(error, "REGISTRATION_ERROR");
     return new NextResponse("Internal error", { status: 500 });
   }
-}
+};

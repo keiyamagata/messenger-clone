@@ -2,7 +2,7 @@ import getCurrentUser from "@/app/actions/getCurrentUser";
 import { NextResponse } from "next/server";
 import prisma from "@/app/libs/prismadb";
 
-export async function POST(request: Request) {
+export const POST = async (request: Request) => {
   try {
     const currentUser = await getCurrentUser();
     const body = await request.json();
@@ -72,4 +72,4 @@ export async function POST(request: Request) {
   } catch (error: any) {
     return new NextResponse("Internal Error", { status: 500 });
   }
-}
+};
