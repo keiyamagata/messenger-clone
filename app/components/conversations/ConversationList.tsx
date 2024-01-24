@@ -3,7 +3,7 @@
 import clsx from "clsx";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { useConversation } from "@/app/hooks/useConversation";
+import useConversation from "@/app/hooks/useConversation";
 import { FullConversationType } from "@/app/types";
 import { MdOutlineGroupAdd } from "react-icons/md";
 import ConversationBox from "./ConversationBox";
@@ -28,7 +28,7 @@ const ConversationList: React.FC<ConversationListProps> = ({
     >
       <div className="px-5">
         <div className="flex justify-between mb-4 pt-4">
-          <h2 className="text-2xl font-bold text-neutral-800">Messages</h2>
+          <div className="text-2xl font-bold text-neutral-800">Messages</div>
           <div className="rounded-full p-2 bg-gray-100 text-gray-600 cursor-pointer hover:opacity-75 transition">
             <MdOutlineGroupAdd size={20} />
           </div>

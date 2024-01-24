@@ -15,6 +15,7 @@ const Avatar: React.FC<AvatarProps> = ({ user }) => {
           src={user?.image || "/images/placeholder.jpg"}
           alt="Avatar"
           fill
+          sizes="100%"
         />
       </div>
       <span className="absolute top-0 right-0 block rounded-full bg-green-500 ring-2 ring-white h-2 w-2 md:h-3 md:w-3" />

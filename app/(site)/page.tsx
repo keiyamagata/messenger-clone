@@ -1,9 +1,9 @@
 import Image from "next/image";
-import AuthForm from "./components/AuthForm";
+import AuthForm from "../components/auth/AuthForm";
 
 const Home = () => {
   return (
-    <div className="min-h-full flex flex-col justify-center py-12 sm:px-6 lg:px-8 bg-gray-100">
+    <div className="min-h-full flex flex-col justify-center py-12 px-3 sm:px-6 lg:px-8 bg-gray-100">
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
         <Image
           src="/images/logo.png"
