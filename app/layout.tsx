@@ -7,9 +7,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Messenger Clone App",
-  description:
-    "A messenger clone app to practice creating a fullstack application.",
+  title: "Chat App",
+  description: 'A chat app to practice creating a "fullstack" application.',
 };
 
 export default function RootLayout({
