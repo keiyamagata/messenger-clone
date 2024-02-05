@@ -8,6 +8,9 @@ import toast from "react-hot-toast";
 import { User } from "@prisma/client";
 import Modal from "./Modal";
 import Inputfield from "../inputs/Inputfield";
+import Image from "next/image";
+import { CldUploadButton } from "next-cloudinary";
+import Button from "../Button";
 
 interface SettingsModalProps {
   currentUser: User;
@@ -72,7 +75,38 @@ const SettingsModal: React.FC<SettingsModalProps> = ({
                 register={register}
               />
             </div>
+            <div>
+              <label className="block text-sm font-medium leading-6 text-gray-900">
+                Photo
+              </label>
+              <div className="mt-2 flex items-center gap-x-3">
+                <Image
+                  src={image || currentUser?.image || "/images/placeholder.jpg"}
+                  alt="Avatar image"
+                  width={48}
+                  height={48}
+                  className="w-12 h-12 object-cover rounded-full"
+                />
+                <CldUploadButton
+                  options={{ maxFiles: 1 }}
+                  onUpload={handleUpload}
+                  uploadPreset="dmsmqvsp"
+                >
+                  <Button type="button" secondary disabled={isLoading}>
+                    Change
+                  </Button>
+                </CldUploadButton>
+              </div>
+            </div>
           </div>
+        </div>
+        <div className="mt-6 flex items-center justify-end gap-x-6">
+          <Button disabled={isLoading} secondary onClick={onClose}>
+            Cancel
+          </Button>
+          <Button disabled={isLoading} type="submit">
+            Save
+          </Button>
         </div>
       </form>
     </Modal>
