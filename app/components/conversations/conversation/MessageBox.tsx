@@ -3,7 +3,7 @@
 import { FullMessageType } from "@/app/types";
 import clsx from "clsx";
 import { useSession } from "next-auth/react";
-import Avatar from "../../Avatar";
+import Avatar from "../../avatar/Avatar";
 import { format } from "date-fns";
 import Image from "next/image";
 
@@ -20,8 +20,6 @@ const MessageBox: React.FC<MessageBoxProps> = ({ data, isLast }) => {
     .filter((user) => user.email !== data?.sender?.email)
     .map((user) => user.name)
     .join(", ");
-
-  if (seenList.length) console.log(seenList);
 
   // dynamic class names
   const container = clsx("flex gap-3 p-4", isOwn && "justify-end");
