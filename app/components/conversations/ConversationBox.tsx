@@ -2,7 +2,6 @@
 
 import { useCallback, useMemo } from "react";
 import { useRouter } from "next/navigation";
-import { Conversation, Message, User } from "@prisma/client";
 import { format } from "date-fns";
 import { useSession } from "next-auth/react";
 import clsx from "clsx";
@@ -81,7 +80,7 @@ const ConversationBox: React.FC<ConversationBoxProps> = ({
         <div className="focus:outline-none">
           <div className="flex justify-between items-center mb-1">
             <p className="text-md font-medium text-gray-900">
-              {data.name || otherUser.name}
+              {data?.name || otherUser?.name}
             </p>
             {lastMessage?.createdAt && (
               <p className="text-xs text-gray-400 font-light">
