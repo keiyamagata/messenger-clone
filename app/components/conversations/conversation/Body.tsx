@@ -61,8 +61,6 @@ const Body: React.FC<BodyProps> = ({ initialMessages }) => {
     };
   }, [conversationId]);
 
-  if (messages) console.log(messages);
-
   return (
     <div className="flex-1 overflow-y-auto">
       {messages.map((message, i) => (
